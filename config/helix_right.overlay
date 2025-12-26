@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "helix-layouts.dtsi"
+
+/ {
+    chosen {
+        zmk,physical-layout = &helix_layout;
+    };
+};
