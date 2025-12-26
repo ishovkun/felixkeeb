@@ -8,6 +8,7 @@
 
 / {
     chosen {
+        /delete-property/ zmk,matrix-transform;
         zmk,physical-layout = &helix_layout;
     };
 };
