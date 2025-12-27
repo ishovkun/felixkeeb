@@ -1,7 +1,7 @@
 #include <physical_layouts.dtsi>
 
 / {
-    helix_layout: helix_layout {
+    felix_layout: felix_layout {
         compatible = "zmk,physical-layout";
         display-name = "Helix Layout";
         transform = <&default_transform>;
