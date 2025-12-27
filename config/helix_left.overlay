@@ -5,7 +5,6 @@
  */
 
 #include "helix.dtsi"
-#include "helix-layouts.dtsi"
 
 &kscan0 {
     col-gpios
@@ -17,14 +16,4 @@
         , <&pro_micro 14 GPIO_ACTIVE_HIGH>
         , <&pro_micro 16 GPIO_ACTIVE_HIGH>
         ;
-};
-
-&helix_layout {
-    kscan = <&kscan0>;
-};
-
-/ {
-    chosen {
-        zmk,physical-layout = &helix_layout;
-    };
 };

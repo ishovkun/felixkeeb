@@ -5,11 +5,7 @@
  */
 
 #include "helix.dtsi"
-#include "helix-layouts.dtsi"
 
-&default_transform {
-    col-offset = <7>;
-};
 
 &kscan0 {
     col-gpios
@@ -23,12 +19,6 @@
         ;
 };
 
-&helix_layout {
-    kscan = <&kscan0>;
-};
-
-/ {
-    chosen {
-        zmk,physical-layout = &helix_layout;
-    };
+&default_transform {
+    col-offset = <7>;
 };
