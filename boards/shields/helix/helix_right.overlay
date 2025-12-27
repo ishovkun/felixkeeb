@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "helix.dtsi"
+
+/ {
+    chosen {
+        /delete-property/ zmk,matrix-transform;
+    };
+};

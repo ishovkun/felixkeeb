@@ -4,11 +4,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "helix-layouts.dtsi"
+#include "helix.dtsi"
 
 / {
     chosen {
         /delete-property/ zmk,matrix-transform;
-        zmk,physical-layout = &helix_layout;
     };
 };
