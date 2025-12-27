@@ -5,9 +5,3 @@
  */
 
 #include "helix.dtsi"
-
-/ {
-    chosen {
-        /delete-property/ zmk,matrix-transform;
-    };
-};
