@@ -3,7 +3,7 @@
 / {
     felix_layout: felix_layout {
         compatible = "zmk,physical-layout";
-        display-name = "Helix Layout";
+        display-name = "Felix Layout";
         transform = <&default_transform>;
         keys  //                     w   h    x    y     rot    rx    ry
             // Row 0 - Left side
