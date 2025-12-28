@@ -26,7 +26,7 @@
 &kp TAB     &kp Q      &kp W   &kp E   &kp R     &kp T                                   &kp Y             &kp U     &kp I      &kp O       &kp P          &kp LEFT_BRACKET
 &kp ESCAPE  &kp A      &kp S   &kp D   &kp F     &kp G                                   &kp H             &kp J     &kp K      &kp L       &kp SEMI       &kp SINGLE_QUOTE
 &kp LSHFT   &kp Z      &kp X   &kp C   &kp V     &kp B                                   &kp N             &kp M     &kp COMMA  &kp PERIOD  &kp SLASH      &kp RSHFT
-&mo 1       &kp LCTRL  &none   &none   &kp LALT  &kp LGUI  &mo 2             &kp EQUAL   &kp RIGHT_CONTROL &kp RGUI  &kp MINUS  &kp EQUAL   &kp BACKSLASH  &kp EQUAL
+&mo 1       &kp LCTRL  &none   &kp ENTER   &kp LGUI  &kp LCTRL  &kp LALT         &kp EQUAL   &kp RIGHT_CONTROL &kp RGUI  &kp MINUS  &kp EQUAL   &kp BACKSLASH  &kp EQUAL
             >;
         };
 
