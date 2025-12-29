@@ -73,12 +73,13 @@
         };
 
         bluetooth {
+            display-name = "Bluetooth layer";
             bindings = <
-&kp LS(LA(LC(LG(F6))))  &trans  &trans  &bt BT_PRV                &trans                   &bt BT_NXT                                  &trans  &trans  &trans  &trans  &trans  &bt BT_CLR
-&kp LS(LA(LC(LG(F6))))  &trans  &trans  &bt BT_PRV                &trans                   &bt BT_NXT                                  &trans  &trans  &trans  &trans  &trans  &bt BT_CLR
-&trans                  &trans  &trans  &MO_NBT_KP K_PREVIOUS     &MO_NBT_KP C_PLAY_PAUSE  &MO_NBT_KP K_FORWARD                        &trans  &trans  &trans  &trans  &trans  &trans
-&trans                  &trans  &trans  &MO_NBT_KP C_VOLUME_DOWN  &MO_NBT_KP K_MUTE        &MO_NBT_KP C_VOLUME_UP  &trans       &trans &trans  &trans  &trans  &trans  &trans  &trans
-&none                   &none   &none   &none                     &none                    &none                   &none        &none  &none   &none   &none   &none   &none   &none
+&kp LS(LA(LC(LG(F6))))  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2              &bt BT_SEL 3             &bt BT_NXT                                      &trans  &trans      &trans      &trans  &trans  &bt BT_CLR
+&kp LS(LA(LC(LG(F6))))  &trans        &trans        &bt BT_PRV                &trans                   &bt BT_NXT                                      &trans  &trans      &trans      &trans  &trans  &bt BT_CLR
+&trans                  &trans        &trans        &MO_NBT_KP K_PREVIOUS     &MO_NBT_KP C_PLAY_PAUSE  &MO_NBT_KP K_FORWARD                            &trans  &bt BT_PRV  &bt BT_NXT  &trans  &trans  &trans
+&trans                  &trans        &trans        &MO_NBT_KP C_VOLUME_DOWN  &MO_NBT_KP K_MUTE        &MO_NBT_KP C_VOLUME_UP  &trans           &trans &trans  &trans      &trans      &trans  &trans  &trans
+&none                   &none         &none         &none                     &none                    &none                   &none            &none  &none   &none       &none       &none   &none   &none
             >;
 
             label = "bt";
