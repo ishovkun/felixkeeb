@@ -1,0 +1,69 @@
+# Felix Keyboard ZMK Configuration
+
+## Overview
+This repository contains ZMK firmware configuration for a **Felix** split keyboard (based on [beekeeb/FelixKeeb](https://github.com/beekeeb/FelixKeeb)). ZMK is an open-source keyboard firmware built on the Zephyr RTOS, designed for wireless split keyboards.
+
+## Hardware
+- **Microcontroller**: nice_nano (both halves)
+- **Display**: nice_view (with adapter) on both halves
+- **Layout**: 5 rows × 14 columns split matrix (68 keys total)
+- **Type**: Wireless split keyboard (Bluetooth)
+
+## Current Features
+
+### Enabled Capabilities
+- **ZMK Studio**: Real-time keymap editing via USB (`CONFIG_ZMK_STUDIO=y`)
+- **Mouse Emulation**: Mouse movement and click keys (`CONFIG_ZMK_POINTING=y`)
+- **nice!view Display**: Shows WPM, layer status, battery percentage, output status
+- **Bluetooth**: Multi-device connectivity with profile switching
+- **Split Keyboard**: Wireless communication between halves
+
+### Keymap Layers
+1. **Base (0)**: QWERTY layout with mod-taps on bottom row
+2. **Navigation (1)**: F-keys, arrow keys, media controls, mouse movement
+3. **Numbers (2)**: Numpad-style layout with shifted symbols
+4. **Bluetooth (3)**: BT profile selection (0-3), device switching, bootloader access
+
+### Key Behaviors Used
+- **Mod-taps**: `LCTRL/ESC`, `RALT/ENTER`, `LALT/SPACE`, `RSHFT/RBKT`
+- **Layer-taps**: `Space/Layer1`, `Enter/Layer1`
+- **Sticky layer**: `sl NUMBERS` for one-shot number layer access
+- **Macros**: Custom macros including BT+keypress combinations
+- **Mouse keys**: Movement (`mmv MOVE_*`) and clicks (`mkp LCLK`)
+
+## Project Structure
+```
+├── .github/workflows/build.yml    # GitHub Actions CI build
+├── build.yaml                     # ZMK build configuration
+├── config/
+│   ├── felix.conf                 # Main ZMK config (features, display, etc.)
+│   ├── west.yml                   # Zephyr west manifest
+│   └── boards/shields/felix/      # Shield definitions
+│       ├── felix.keymap           # Keymap definition (edit this for layout changes)
+│       ├── felix.dtsi             # Device tree shared config
+│       ├── felix-layouts.dtsi     # Physical key layout
+│       ├── felix.zmk.yml          # ZMK metadata (Studio support)
+│       ├── felix_left.overlay     # Left half overlay
+│       └── felix_right.overlay    # Right half overlay
+```
+
+## Build System
+- Firmware builds automatically via GitHub Actions on push/PR
+- Uses `zmkfirmware/zmk` build-user-config workflow
+- Outputs: `felix_left`, `felix_right`, and `settings_reset` firmware files
+
+## Common Tasks
+
+### Modifying the Keymap
+Edit `config/boards/shields/felix/felix.keymap`. The keymap uses ZMK's devicetree syntax with behaviors like `&kp` (key press), `&mt` (mod-tap), `&lt` (layer-tap), `&trans` (transparent), `&none`.
+
+### Adding New Layers
+1. Define layer index in the keymap file
+2. Add bindings block under the new layer
+3. Add layer activation key(s) to existing layers
+
+### Changing Display/Feature Settings
+Edit `config/felix.conf` for ZMK configuration options.
+
+### Bluetooth Profiles
+The keyboard supports multiple BT profiles (0-3) accessible via the Bluetooth layer. Use `&bt BT_SEL N` to select profile N, `&bt BT_CLR` to clear current profile.
