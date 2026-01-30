@@ -67,3 +67,6 @@ Edit `config/felix.conf` for ZMK configuration options.
 
 ### Bluetooth Profiles
 The keyboard supports multiple BT profiles (0-3) accessible via the Bluetooth layer. Use `&bt BT_SEL N` to select profile N, `&bt BT_CLR` to clear current profile.
+
+## VERY IMPORTANT
+Prefer editing files line by line to fully rewriting them.
